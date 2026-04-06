@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Svarskjema &ndash; Marit & Nicolai</title>
+    <meta
+      name="description"
+      content="Svar p&aring; bryllupsinvitasjonen til Marit og Nicolai."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero hero-small">
+      <p class="eyebrow">
+        <a href="./index.html" class="back-link">&larr; Tilbake til forsiden</a>
+      </p>
+      <span class="ornament">&mdash; &hearts; &mdash;</span>
+      <h1>Svarskjema</h1>
+      <p class="date">Marit <em>&amp;</em> Nicolai &middot; 5. juni 2027</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>RSVP</h2>
+        <p>Vi ber om svar innen <strong>1. mars 2027</strong>.</p>
+        <form id="rsvp-form" class="form">
+          <label>
+            Fullt navn
+            <input type="text" name="navn" required />
+          </label>
+
+          <label>
+            E-post
+            <input type="email" name="epost" required />
+          </label>
+
+          <label>
+            Kommer du?
+            <select name="deltakelse" required>
+              <option value="">Velg</option>
+              <option value="Ja">Ja, jeg kommer</option>
+              <option value="Nei">Nei, dessverre</option>
+            </select>
+          </label>
+
+          <label>
+            Antall gjester (inkludert deg selv)
+            <input type="number" name="antall" min="1" max="10" value="1" />
+          </label>
+
+          <label>
+            Matpreferanser / allergier
+            <textarea
+              name="matpreferanser"
+              rows="3"
+              placeholder="F.eks. vegetar, glutenallergi..."
+            ></textarea>
+          </label>
+
+          <label>
+            Hilsen til brudeparet
+            <textarea name="hilsen" rows="4"></textarea>
+          </label>
+
+          <button type="submit" class="button">Send svar</button>
+          <p id="rsvp-status" class="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <span class="divider">&bull; &bull; &bull;</span>
+
+      <section class="card">
+        <h2>Sp&oslash;rsm&aring;l eller beskjed</h2>
+        <form id="contact-form" class="form">
+          <label>
+            Navn
+            <input type="text" name="navn" required />
+          </label>
+
+          <label>
+            Sp&oslash;rsm&aring;l eller beskjed
+            <textarea name="melding" rows="4" required></textarea>
+          </label>
+
+          <button type="submit" class="button">Send melding</button>
+          <p id="contact-status" class="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="ornament">&mdash; &hearts; &mdash;</span>
+      <p>Marit <em>&amp;</em> Nicolai &middot; 2027</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

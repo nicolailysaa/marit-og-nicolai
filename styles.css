@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&family=Roboto+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+:root {
+  color-scheme: light;
+  --bg: #f8f5f0;
+  --text: #2c3e2d;
+  --text-light: #5a6e5b;
+  --card: #fefcf9;
+  --accent: #3d5e3a;
+  --accent-hover: #2e4a2b;
+  --accent-light: #a8c4a6;
+  --border: #d6ccbc;
+  --gold: #5c7a58;
+  --blush: #efe8dd;
+  --font-script: 'MonteCarlo', cursive;
+  --font-serif: 'Roboto Serif', 'Georgia', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+/* ---- HERO ---- */
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 6rem 1.5rem 4rem;
+  background: linear-gradient(170deg, #efe8dd 0%, #f8f5f0 100%);
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px solid var(--accent-light);
+  border-radius: 50%;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero::before {
+  top: -60px;
+  left: -60px;
+}
+
+.hero::after {
+  bottom: -80px;
+  right: -80px;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.ornament {
+  display: block;
+  margin: 0.6rem auto 0.8rem;
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: 0.5em;
+  user-select: none;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1.15;
+  color: var(--text);
+}
+
+h1 .amp {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+  padding: 0 0.15em;
+}
+
+.date {
+  margin: 0.8rem 0 2rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+/* ---- HERO IMAGE ---- */
+
+.hero-image-wrapper {
+  max-width: 420px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 40px rgba(61, 94, 58, 0.15);
+}
+
+/* ---- SECTION DIVIDER ---- */
+
+.divider {
+  display: block;
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--gold);
+  letter-spacing: 0.4em;
+  user-select: none;
+}
+
+/* ---- CONTAINER / CARDS ---- */
+
+.container {
+  width: min(780px, 90vw);
+  margin: 0 auto 4rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 2rem 1.8rem;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin: 0 0 0.8rem;
+  color: var(--text);
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: var(--accent-light);
+  margin-top: 0.5rem;
+}
+
+.center h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  margin: 0 0 0.6rem;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+ul li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+/* ---- BUTTONS ---- */
+
+.button {
+  display: inline-block;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.8rem 2.2rem;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* ---- FORMS ---- */
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  font-weight: 300;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 0.85rem;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(61, 94, 58, 0.12);
+}
+
+.status {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  color: #4a7c59;
+  min-height: 1.4em;
+}
+
+.status.error {
+  color: #a33;
+}
+
+/* ---- UTILITY ---- */
+
+.center {
+  text-align: center;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* ---- HERO SMALL (svar.html) ---- */
+
+.hero-small {
+  padding: 3.5rem 1.5rem 2rem;
+}
+
+.back-link {
+  color: var(--accent);
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ---- FOOTER ---- */
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem 2.5rem;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.footer .ornament {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ---- RESPONSIVE ---- */
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 4rem 1rem 3rem;
+  }
+
+  .card {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .hero-image-wrapper {
+    max-width: 280px;
+  }
+}
