@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kast buketten! – Bryllupsspillet</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./spill.css" />
+  </head>
+  <body>
+    <header class="hero hero-small">
+      <p class="eyebrow">
+        <a href="../spill.html" class="back-link">&larr; Tilbake til spillene</a>
+      </p>
+      <span class="ornament">&mdash; &hearts; &mdash;</span>
+      <h1>Kast buketten!</h1>
+      <p class="date">Bryllupsspillet</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Hvor langt flyr buketten?</h2>
+        <p>
+          Tradisjonen tro kaster bruden buketten baklengs &ndash; men Marit
+          sikter litt lenger enn de fleste. Kanskje helt til bryllupsreisen?
+        </p>
+        <p>
+          <strong>Slik spiller du:</strong> Stopp kraftm&aring;leren, velg
+          vinkel og se buketten fly. Hver meter gir kroner du kan bruke p&aring;
+          oppgraderinger. Duer, ballonger og hatter hjelper deg videre &ndash;
+          men pass deg for gjester som pr&oslash;ver &aring; fange den!
+        </p>
+      </section>
+
+      <section class="card game-wrapper">
+        <div class="game-hud">
+          <span id="kr-display">Kroner: 0 kr</span>
+          <span id="best-display">Rekord: 0 m</span>
+        </div>
+        <canvas id="game" width="760" height="300"></canvas>
+        <p class="game-hint">Trykk <strong>mellomrom</strong> eller <strong>klikk/tap</strong> p&aring; spillet</p>
+
+        <div class="shop">
+          <div class="shop-head">
+            <h3>Oppgraderinger</h3>
+            <span class="shop-money" id="shop-money">0 kr</span>
+          </div>
+          <div class="shop-grid" id="shop-grid"></div>
+          <div class="shop-actions">
+            <button type="button" class="button secondary" id="reset-btn">Start p&aring; nytt</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="ornament">&mdash; &hearts; &mdash;</span>
+      <p>Marit <em>&amp;</em> Nicolai &middot; 2027</p>
+    </footer>
+
+    <script src="./bukett.js"></script>
+  </body>
+</html>
