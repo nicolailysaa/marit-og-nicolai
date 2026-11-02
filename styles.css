@@ -277,6 +277,31 @@ a {
   padding: 3.5rem 1.5rem 2rem;
 }
 
+.hero-banner {
+  background: linear-gradient(rgba(248, 245, 240, 0.82), rgba(248, 245, 240, 0.94)),
+    url('./bilder/hetlandskirken.jpg') center / cover no-repeat;
+}
+
+/* ---- PHOTOS ---- */
+
+.photo {
+  margin: 0 0 1rem;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.photo figcaption,
+.credit {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
 .back-link {
   color: var(--accent);
   text-decoration: none;

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="hero hero-small">
+    <header class="hero hero-small hero-banner">
       <p class="eyebrow">
         <a href="./index.html" class="back-link">&larr; Tilbake til forsiden</a>
       </p>
@@ -43,6 +43,20 @@
               <option value="Nei">Nei, dessverre</option>
             </select>
           </label>
+
+          <div id="sikker-felt" hidden>
+            <label>
+              Er du sikker??
+              <select id="sikker-svar" name="sikker">
+                <option value="">Velg</option>
+                <option value="Ja">Ja</option>
+                <option value="Nei">Nei</option>
+              </select>
+            </label>
+            <p id="sikker-melding" class="status" hidden>
+              Feil svar, du er p&aring;meldt! Vi gleder oss til &aring; se deg!
+            </p>
+          </div>
 
           <label>
             Antall gjester (inkludert deg selv)

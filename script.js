@@ -44,3 +44,22 @@ setupForm(
   "contact-status",
   "Takk! Meldingen din er sendt."
 );
+
+const deltakelseSelect = document.querySelector('select[name="deltakelse"]');
+const sikkerFelt = document.getElementById("sikker-felt");
+const sikkerSelect = document.getElementById("sikker-svar");
+const sikkerMelding = document.getElementById("sikker-melding");
+
+if (deltakelseSelect && sikkerFelt) {
+  deltakelseSelect.addEventListener("change", () => {
+    const sierNei = deltakelseSelect.value === "Nei";
+    sikkerFelt.hidden = !sierNei;
+    sikkerSelect.required = sierNei;
+    sikkerSelect.value = "";
+    sikkerMelding.hidden = true;
+  });
+
+  sikkerSelect.addEventListener("change", () => {
+    sikkerMelding.hidden = sikkerSelect.value !== "Ja";
+  });
+}
