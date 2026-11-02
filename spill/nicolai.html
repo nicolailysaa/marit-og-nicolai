@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hjelp Nicolai! – Bryllupsspillet</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./spill.css" />
+  </head>
+  <body>
+    <header class="hero hero-small">
+      <p class="eyebrow">
+        <a href="../spill.html" class="back-link">&larr; Tilbake til spillene</a>
+      </p>
+      <span class="ornament">&mdash; &hearts; &mdash;</span>
+      <h1>Hjelp Nicolai!</h1>
+      <p class="date">Bryllupsspillet</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Nicolai har forsovet seg!</h2>
+        <p>
+          Det er bryllupsdagen, men Nicolai har gl&oslash;mt &aring; sette alarmen.
+          N&aring; m&aring; han l&oslash;pe for &aring; rekke vielsen i tide!
+          Hjelp ham &aring; hoppe over biler og hus p&aring; veien til kirken.
+        </p>
+        <p>
+          <strong>Bonuspoeng:</strong> Fang deler av dressen underveis &ndash;
+          jakke, sløyfe, sko og vest. Kanskje han rekker frem
+          b&aring;de i tide <em>og</em> velkledd?
+        </p>
+      </section>
+
+      <section class="card game-wrapper">
+        <div class="game-hud">
+          <span id="score-display">Poeng: 0</span>
+          <span id="highscore-display">Rekord: 0</span>
+        </div>
+        <canvas id="game" width="760" height="260"></canvas>
+        <div class="tuxedo-inventory" id="tuxedo-inv">
+          <span class="tuxedo-item" data-part="jakke">&#128084; Jakke</span>
+          <span class="tuxedo-item" data-part="sloeyfe">&#127872; Sl&oslash;yfe</span>
+          <span class="tuxedo-item" data-part="sko">&#128094; Sko</span>
+          <span class="tuxedo-item" data-part="vest">&#129404; Vest</span>
+        </div>
+        <p class="game-hint">Trykk <strong>mellomrom</strong>, <strong>pil opp</strong> eller <strong>klikk/tap</strong> for &aring; hoppe</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="ornament">&mdash; &hearts; &mdash;</span>
+      <p>Marit <em>&amp;</em> Nicolai &middot; 2027</p>
+    </footer>
+
+    <script src="./nicolai.js"></script>
+  </body>
+</html>

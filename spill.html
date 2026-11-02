@@ -3,60 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hjelp Nicolai! – Bryllupsspillet</title>
+    <title>Bryllupsspillene – Marit & Nicolai</title>
     <link rel="stylesheet" href="./styles.css" />
-    <style>
-      .game-wrapper {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      canvas {
-        display: block;
-        margin: 0 auto;
-        border: 2px solid var(--border);
-        border-radius: 12px;
-        background: #f0ebe3;
-        max-width: 100%;
-        cursor: pointer;
-      }
-      .game-hud {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.9rem;
-        font-weight: 500;
-        padding: 0.6rem 0.2rem;
-        color: var(--text);
-      }
-      .tuxedo-inventory {
-        display: flex;
-        gap: 0.5rem;
-        justify-content: center;
-        margin-top: 0.5rem;
-        flex-wrap: wrap;
-      }
-      .tuxedo-item {
-        padding: 0.3rem 0.7rem;
-        border-radius: 999px;
-        font-size: 0.8rem;
-        font-weight: 500;
-        border: 1px solid var(--border);
-        background: var(--card);
-        opacity: 0.35;
-        transition: opacity 0.3s, background 0.3s;
-      }
-      .tuxedo-item.collected {
-        opacity: 1;
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
-      }
-      .game-hint {
-        margin-top: 0.8rem;
-        font-size: 0.82rem;
-        color: var(--text-light);
-      }
-    </style>
+    <link rel="stylesheet" href="./spill/spill.css" />
   </head>
   <body>
     <header class="hero hero-small">
@@ -64,46 +13,39 @@
         <a href="./index.html" class="back-link">&larr; Tilbake til forsiden</a>
       </p>
       <span class="ornament">&mdash; &hearts; &mdash;</span>
-      <h1>Hjelp Nicolai!</h1>
-      <p class="date">Bryllupsspillet</p>
+      <h1>Bryllupsspillene</h1>
+      <p class="date">Fordriv ventetiden</p>
     </header>
 
     <main class="container">
-      <section class="card">
-        <h2>Nicolai har forsovet seg!</h2>
-        <p>
-          Det er bryllupsdagen, men Nicolai har gl&oslash;mt &aring; sette alarmen.
-          N&aring; m&aring; han l&oslash;pe for &aring; rekke vielsen i tide!
-          Hjelp ham &aring; hoppe over biler og hus p&aring; veien til kirken.
-        </p>
-        <p>
-          <strong>Bonuspoeng:</strong> Fang deler av dressen underveis &ndash;
-          jakke, sløyfe, sko og vest. Kanskje han rekker frem
-          b&aring;de i tide <em>og</em> velkledd?
-        </p>
-      </section>
+      <div class="game-list">
+        <section class="card center game-card">
+          <span class="game-icon">&#127939;</span>
+          <h2>Hjelp Nicolai!</h2>
+          <p>
+            Nicolai har forsovet seg p&aring; bryllupsdagen! Hjelp ham &aring;
+            hoppe over biler og hus p&aring; veien til kirken &ndash; og fang
+            deler av dressen underveis.
+          </p>
+          <a class="button" href="./spill/nicolai.html">Spill</a>
+        </section>
 
-      <section class="card game-wrapper">
-        <div class="game-hud">
-          <span id="score-display">Poeng: 0</span>
-          <span id="highscore-display">Rekord: 0</span>
-        </div>
-        <canvas id="game" width="760" height="260"></canvas>
-        <div class="tuxedo-inventory" id="tuxedo-inv">
-          <span class="tuxedo-item" data-part="jakke">&#128084; Jakke</span>
-          <span class="tuxedo-item" data-part="sloeyfe">&#127872; Sl&oslash;yfe</span>
-          <span class="tuxedo-item" data-part="sko">&#128094; Sko</span>
-          <span class="tuxedo-item" data-part="vest">&#129404; Vest</span>
-        </div>
-        <p class="game-hint">Trykk <strong>mellomrom</strong>, <strong>pil opp</strong> eller <strong>klikk/tap</strong> for &aring; hoppe</p>
-      </section>
+        <section class="card center game-card">
+          <span class="game-icon">&#128144;</span>
+          <h2>Kast buketten!</h2>
+          <p>
+            Marit kaster brudebuketten baklengs &ndash; men hvor langt? Tjen
+            kroner p&aring; hvert kast, kj&oslash;p oppgraderinger og send
+            buketten helt til bryllupsreisen.
+          </p>
+          <a class="button" href="./spill/bukett.html">Spill</a>
+        </section>
+      </div>
     </main>
 
     <footer class="footer">
       <span class="ornament">&mdash; &hearts; &mdash;</span>
       <p>Marit <em>&amp;</em> Nicolai &middot; 2027</p>
     </footer>
-
-    <script src="./game.js"></script>
   </body>
 </html>
