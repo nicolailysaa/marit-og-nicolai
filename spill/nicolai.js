@@ -31,6 +31,10 @@
   let reachedChurch = false;
   let lastObstacleSpawnX = 0;
 
+  var board = window.Scoreboard
+    ? Scoreboard.mount("nicolai", document.getElementById("scoreboard"))
+    : null;
+
   const player = {
     x: 60,
     y: GROUND_Y,
@@ -41,6 +45,7 @@
   };
 
   function reset() {
+    if (board) board.clear();
     score = 0;
     bonusScore = 0;
     speed = BASE_SPEED;
@@ -80,6 +85,7 @@
     if (state === "won") {
       // continue running after reaching the church
       state = "running";
+      if (board) board.clear();
       obstacles = [];
       collectibles = [];
       player.x = 60;
@@ -374,7 +380,7 @@
     ctx.fillStyle = "#2c3e2d";
     ctx.font = "bold 22px 'Roboto Serif', Georgia, serif";
     ctx.textAlign = "center";
-    ctx.fillText("Hjelp Nicolai!", W / 2, H / 2 - 20);
+    ctx.fillText("Forsovet", W / 2, H / 2 - 20);
     ctx.font = "15px 'Roboto Serif', Georgia, serif";
     ctx.fillStyle = "#5a6e5b";
     ctx.fillText("Trykk for \u00E5 starte", W / 2, H / 2 + 12);
@@ -476,6 +482,7 @@
       }
       updateHUD();
       drawWinScreen();
+      if (board) board.submit(totalScore());
       return;
     }
 
@@ -555,6 +562,7 @@
         for (var dj = 0; dj < collectibles.length; dj++) drawCollectible(collectibles[dj]);
         drawPlayer();
         drawGameOver();
+        if (board) board.submit(totalScore());
         return;
       }
     }

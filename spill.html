@@ -6,10 +6,12 @@
     <title>Bryllupsspillene – Marit & Nicolai</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./spill/spill.css" />
+    <link rel="stylesheet" href="./spill/scoreboard.css" />
   </head>
   <body>
     <nav class="site-nav">
       <a href="./index.html">Hjem</a>
+      <a href="./informasjon.html">Informasjon om dagen</a>
       <a href="./svar.html">Svarskjema</a>
       <a href="./forlovere.html">Toastmastere og forlovere</a>
       <a href="./spill.html">Spill</a>
@@ -27,7 +29,7 @@
       <div class="game-list">
         <section class="card center game-card">
           <span class="game-icon">&#127939;</span>
-          <h2>Hjelp Nicolai!</h2>
+          <h2>Forsovet</h2>
           <p>
             Nicolai har forsovet seg p&aring; bryllupsdagen! Hjelp ham &aring;
             hoppe over biler og hus p&aring; veien til kirken &ndash; og fang
@@ -46,12 +48,34 @@
           </p>
           <a class="button" href="./spill/bukett.html">Spill</a>
         </section>
+
+        <section class="card center game-card">
+          <span class="game-icon">&#128663;</span>
+          <h2>Fri fart!</h2>
+          <p>
+            Nicolai og Marit kj&oslash;rer fra kirken mot Solastranden. Pass deg
+            for fartskontrollene &ndash; og ikke kj&oslash;r for fort!
+          </p>
+          <a class="button" href="./spill/racer.html">Spill</a>
+        </section>
       </div>
+
+      <section class="card center">
+        <p>Bruk samme navn i alle spillene for &aring; v&aelig;re med i kampen om sammenlagtseieren.</p>
+        <div id="samlet"></div>
+      </section>
     </main>
 
     <footer class="footer">
       <span class="ornament">&mdash; &hearts; &mdash;</span>
       <p>Marit <em>&amp;</em> Nicolai &middot; 2027</p>
+      <p class="footer-credit">Made with love by Sander &amp; Nico</p>
     </footer>
+
+    <script src="./script.js"></script>
+    <script src="./spill/scoreboard.js"></script>
+    <script>
+      if (window.Scoreboard) Scoreboard.renderOverall(document.getElementById("samlet"));
+    </script>
   </body>
 </html>

@@ -250,6 +250,10 @@
 
   var save = loadSave();
 
+  var board = window.Scoreboard
+    ? Scoreboard.mount("bukett", document.getElementById("scoreboard"))
+    : null;
+
   // ---- Tilstand ----
 
   var state = "ready"; // ready | power | angle | windup | flying | landed | won
@@ -281,6 +285,7 @@
   }
 
   function startThrow() {
+    if (board) board.clear();
     s = stats(save.lv);
     b = launch(s, power, angle);
     b.rot = 0;
@@ -316,6 +321,7 @@
     };
     updateHUD();
     setState(justWon ? "won" : "landed");
+    if (board) board.submit(Math.round(dist));
   }
 
   // ---- Input ----

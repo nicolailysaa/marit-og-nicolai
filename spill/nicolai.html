@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hjelp Nicolai! – Bryllupsspillet</title>
+    <title>Forsovet – Bryllupsspillet</title>
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="./spill.css" />
+    <link rel="stylesheet" href="./scoreboard.css" />
   </head>
   <body>
     <header class="hero hero-small">
@@ -13,7 +14,7 @@
         <a href="../spill.html" class="back-link">&larr; Tilbake til spillene</a>
       </p>
       <span class="ornament">&mdash; &hearts; &mdash;</span>
-      <h1>Hjelp Nicolai!</h1>
+      <h1>Forsovet</h1>
       <p class="date">Bryllupsspillet</p>
     </header>
 
@@ -45,14 +46,18 @@
           <span class="tuxedo-item" data-part="vest">&#129404; Vest</span>
         </div>
         <p class="game-hint">Trykk <strong>mellomrom</strong>, <strong>pil opp</strong> eller <strong>klikk/tap</strong> for &aring; hoppe</p>
+        <div id="scoreboard"></div>
       </section>
     </main>
 
     <footer class="footer">
       <span class="ornament">&mdash; &hearts; &mdash;</span>
       <p>Marit <em>&amp;</em> Nicolai &middot; 2027</p>
+      <p class="footer-credit">Made with love by Sander &amp; Nico</p>
     </footer>
 
+    <script src="../script.js"></script>
+    <script src="./scoreboard.js"></script>
     <script src="./nicolai.js"></script>
   </body>
 </html>

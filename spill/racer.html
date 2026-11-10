@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fri fart! &ndash; Bryllupsspillet</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./spill.css" />
+    <link rel="stylesheet" href="./scoreboard.css" />
+    <style>
+      .race-hud {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.2rem 0.5rem;
+        font-variant-numeric: tabular-nums;
+      }
+      .race-hud span:nth-child(2),
+      .race-hud span:nth-child(3) {
+        text-align: center;
+      }
+      .race-hud span:last-child {
+        text-align: right;
+      }
+      @media (max-width: 700px) {
+        .race-hud {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .race-hud span:nth-child(odd) {
+          text-align: left;
+        }
+        .race-hud span:nth-child(even) {
+          text-align: right;
+        }
+      }
+      .race-box {
+        margin: 0.9rem auto 0;
+        max-width: 760px;
+        padding: 0.9rem 1rem;
+        border-radius: 12px;
+        text-align: center;
+      }
+      .race-box[hidden] {
+        display: none;
+      }
+      .race-box p {
+        margin: 0 0 0.7rem;
+        font-weight: 500;
+      }
+      .race-fail {
+        background: #f7dcd6;
+        border: 2px solid #c0392b;
+        color: #7a1d12;
+      }
+      .race-fail p {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      .race-win {
+        background: var(--blush);
+        border: 2px solid var(--accent);
+        color: var(--accent);
+      }
+
+      .touch-controls {
+        display: none;
+        justify-content: space-between;
+        gap: 0.8rem;
+        max-width: 760px;
+        margin: 0.8rem auto 0;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+      }
+      .touch-group {
+        display: flex;
+        gap: 0.6rem;
+      }
+      .tc-btn {
+        min-width: 68px;
+        height: 68px;
+        padding: 0 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        border: 2px solid var(--accent);
+        background: #fff;
+        color: var(--accent);
+        font-size: 1.1rem;
+        font-weight: 600;
+        touch-action: none;
+        cursor: pointer;
+      }
+      .tc-btn.active {
+        background: var(--accent);
+        color: #fff;
+      }
+      .tc-gas {
+        min-width: 96px;
+      }
+      @media (pointer: coarse), (max-width: 700px) {
+        .touch-controls {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero hero-small">
+      <p class="eyebrow">
+        <a href="../spill.html" class="back-link">&larr; Tilbake til spillene</a>
+      </p>
+      <span class="ornament">&mdash; &hearts; &mdash;</span>
+      <h1>Fri fart!</h1>
+      <p class="date">Bryllupsspillet</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Bort fra kirka!</h2>
+        <p>
+          Vielsen i Hetlandskirken i Stavanger er over, og Marit og Nicolai
+          setter seg i bryllupsbilen &ndash; med &laquo;Just Married&raquo;-skilt
+          og blikkbokser p&aring; slep. N&aring; gjelder det &aring; komme seg
+          til festen p&aring; Solastranden G&aring;rd s&aring; fort som mulig!
+        </p>
+        <p>
+          <strong>Slik spiller du:</strong> Gi gass, kj&oslash;r forbi s&aring;
+          mange biler du kan, og st&aring; i m&aring;l f&oslash;r tiden l&oslash;per
+          fra deg. Hurtig kj&oslash;ring og forbikj&oslash;ringer gir poeng
+          &ndash; biler du treffer, tar bare farten din.
+        </p>
+        <p>
+          <strong>Pass p&aring; fartskontrollen!</strong> Underveis st&aring;r det
+          <em>to</em> fartskontroller. Fartsgrensen der er
+          <strong>80 km/h</strong> &ndash; er du over n&aring;r du passerer, er
+          turen over. Bremsen er din venn.
+        </p>
+      </section>
+
+      <section class="card game-wrapper">
+        <div class="game-hud race-hud">
+          <span id="speed-display">Fart: 0 km/h</span>
+          <span id="time-display">Tid: 0,0 s</span>
+          <span id="pass-display">Forbikj&oslash;rt: 0</span>
+          <span id="best-display">Rekord: 0</span>
+        </div>
+        <canvas id="game" width="760" height="428"></canvas>
+
+        <div id="fail-box" class="race-box race-fail" role="alert" hidden>
+          <p id="fail-msg"></p>
+          <button type="button" class="button" id="retry-btn">Pr&oslash;v igjen</button>
+        </div>
+        <div id="win-box" class="race-box race-win" hidden>
+          <p id="win-msg"></p>
+          <button type="button" class="button" id="again-btn">Kj&oslash;r igjen</button>
+        </div>
+
+        <div class="touch-controls" id="touch">
+          <div class="touch-group">
+            <div class="tc-btn" data-ctrl="left" role="button" aria-label="Sving til venstre">&larr;</div>
+            <div class="tc-btn" data-ctrl="right" role="button" aria-label="Sving til h&oslash;yre">&rarr;</div>
+          </div>
+          <div class="touch-group">
+            <div class="tc-btn" data-ctrl="brake" role="button" aria-label="Brems">Brems</div>
+            <div class="tc-btn tc-gas" data-ctrl="gas" role="button" aria-label="Gass">Gass</div>
+          </div>
+        </div>
+
+        <p class="game-hint">
+          Styr med <strong>&larr; &rarr;</strong> eller <strong>A/D</strong>
+          &middot; gass: <strong>&uarr;</strong>, <strong>W</strong> eller
+          <strong>mellomrom</strong> &middot; brems: <strong>&darr;</strong>
+          eller <strong>S</strong>. Trykk p&aring; spillet for &aring; starte.
+        </p>
+        <div id="scoreboard"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="ornament">&mdash; &hearts; &mdash;</span>
+      <p>Marit <em>&amp;</em> Nicolai &middot; 2027</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="./scoreboard.js"></script>
+    <script src="./racer.js"></script>
+  </body>
+</html>

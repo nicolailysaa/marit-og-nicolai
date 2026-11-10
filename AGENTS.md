@@ -14,7 +14,8 @@
 
 ## Stack
 - Static site: `index.html`, `spill.html` (game hub), `svar.html`, `styles.css`, `script.js`.
-- Games live in `spill/`: `nicolai.html`/`nicolai.js` (runner), `bukett.html`/`bukett.js` (bouquet-toss incremental game), shared `spill.css`. Each game is a vanilla JS IIFE drawing on a canvas; progress/highscores in `localStorage`.
+- Games live in `spill/`: `nicolai.html`/`nicolai.js` (runner), `bukett.html`/`bukett.js` (bouquet-toss incremental game), `racer.html`/`racer.js` ("Fri fart!" driving game), shared `spill.css`. Each game is a vanilla JS IIFE drawing on a canvas; progress/highscores in `localStorage`.
+- Shared scoreboard: `spill/scoreboard.js` + `spill/scoreboard.css` (`Scoreboard.mount(gameKey, el)`, `Scoreboard.renderOverall(el)`), backed by the Google Apps Script endpoint (`APPS_SCRIPT_URL` from `script.js`, loaded first); sheet tab "Poeng". Overall scoring: per game rank gives 25/20/17/15/12/10 then 9..1 points.
 - No build step, no package manager, no server code.
 - Backend: Google Apps Script endpoint called from `script.js` (see `OPPSETT_GOOGLE_SHEETS.md`).
 - Language of site content: Norwegian.

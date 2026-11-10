@@ -6,6 +6,7 @@
     <title>Kast buketten! – Bryllupsspillet</title>
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="./spill.css" />
+    <link rel="stylesheet" href="./scoreboard.css" />
   </head>
   <body>
     <header class="hero hero-small">
@@ -40,6 +41,8 @@
         <canvas id="game" width="760" height="300"></canvas>
         <p class="game-hint">Trykk <strong>mellomrom</strong> eller <strong>klikk/tap</strong> p&aring; spillet</p>
 
+        <div id="scoreboard"></div>
+
         <div class="shop">
           <div class="shop-head">
             <h3>Oppgraderinger</h3>
@@ -56,8 +59,11 @@
     <footer class="footer">
       <span class="ornament">&mdash; &hearts; &mdash;</span>
       <p>Marit <em>&amp;</em> Nicolai &middot; 2027</p>
+      <p class="footer-credit">Made with love by Sander &amp; Nico</p>
     </footer>
 
+    <script src="../script.js"></script>
+    <script src="./scoreboard.js"></script>
     <script src="./bukett.js"></script>
   </body>
 </html>

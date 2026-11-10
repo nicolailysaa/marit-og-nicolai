@@ -1,0 +1,88 @@
+/* Poengtavle og navneinnsending */
+
+.score-prompt {
+  margin-top: 1rem;
+  padding: 1.2rem 1.2rem 0.8rem;
+  border: 1px solid var(--accent-light);
+  border-radius: 12px;
+  background: var(--blush);
+  text-align: center;
+}
+
+.score-prompt-result {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.score-form {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.score-form input {
+  min-width: 0;
+  flex: 1 1 160px;
+  max-width: 260px;
+}
+
+.board {
+  margin-top: 1.4rem;
+  text-align: left;
+}
+
+.board-title {
+  margin: 0 0 0.6rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.board-empty {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.board-table th,
+.board-table td {
+  padding: 0.35rem 0.4rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.board-table th {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.board-place {
+  width: 2.2rem;
+  color: var(--text-light);
+}
+
+.board-score,
+.board-pts,
+.board-total {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.board-total {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.board-overall {
+  display: block;
+  overflow-x: auto;
+}
