@@ -315,6 +315,52 @@ a {
   text-decoration: underline;
 }
 
+/* ---- RINGS (forlovere.html) ---- */
+
+.ring-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-light);
+  background: #fff;
+}
+
+/* ---- SITE NAV ---- */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  padding: 0.8rem 1rem;
+  background: rgba(254, 252, 249, 0.95);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+}
+
 /* ---- FOOTER ---- */
 
 .footer {
