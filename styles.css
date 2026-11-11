@@ -343,6 +343,7 @@ a {
   border: 2px solid var(--accent-light);
   background: #fff;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .person {
@@ -404,8 +405,7 @@ a {
 .collage-big {
   grid-column: span 4;
   grid-row: span 2;
-  height: 0;
-  min-height: 100%;
+  aspect-ratio: 1;
 }
 
 .collage-small {
