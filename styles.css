@@ -342,11 +342,21 @@ a {
   border-radius: 50%;
   border: 2px solid var(--accent-light);
   background: #fff;
+  overflow: hidden;
 }
 
 .person {
   margin: 0;
   width: 160px;
+}
+
+.ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  display: block;
 }
 
 .person .ring {
@@ -360,24 +370,57 @@ a {
 
 /* ---- COLLAGE (forlovere.html) ---- */
 
+.person-bio {
+  width: 260px;
+}
+
+.person-bio p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.bio-text {
+  margin: 1.5rem 0 0;
+  text-align: left;
+  line-height: 1.7;
+}
+
 .collage {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .collage img {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
   border-radius: 8px;
 }
 
-.collage img:first-child {
-  grid-column: span 2;
+.collage-big {
+  grid-column: span 4;
   grid-row: span 2;
+  height: 0;
+  min-height: 100%;
+}
+
+.collage-small {
+  grid-column: span 2;
+  aspect-ratio: 1;
+}
+
+.collage-wide {
+  grid-column: 1 / -1;
+  height: auto;
+}
+
+.collage-half {
+  grid-column: span 3;
+  aspect-ratio: 3 / 2;
 }
 
 /* ---- SITE NAV ---- */
