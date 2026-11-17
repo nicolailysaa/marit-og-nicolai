@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finn brudebuketten – Bryllupsspillet</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./spill.css" />
+    <link rel="stylesheet" href="./scoreboard.css" />
+  </head>
+  <body>
+    <header class="hero hero-small">
+      <p class="eyebrow">
+        <a href="../spill.html" class="back-link">&larr; Tilbake til spillene</a>
+      </p>
+      <span class="ornament">&mdash; &hearts; &mdash;</span>
+      <h1>Finn brudebuketten</h1>
+      <p class="date">Bryllupsspillet</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Finn parene!</h2>
+        <p>
+          Snu to og to kort og finn alle bryllupsparene. Jo raskere du er og jo
+          f&aelig;rre fors&oslash;k du bruker, desto flere poeng f&aring;r du.
+        </p>
+      </section>
+
+      <section class="card game-wrapper">
+        <div class="game-hud">
+          <span id="moves-display">Fors&oslash;k: 0</span>
+          <span id="time-display">Tid: 0 s</span>
+          <span id="best-display">Rekord: 0</span>
+        </div>
+        <div id="memory-grid" class="memory-grid"></div>
+        <div class="shop-actions">
+          <button type="button" class="button secondary" id="restart-btn">Ny runde</button>
+        </div>
+        <div id="scoreboard"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="ornament">&mdash; &hearts; &mdash;</span>
+      <p>Marit <em>&amp;</em> Nicolai &middot; 2027</p>
+      <p class="footer-credit">Made with love by Sander &amp; Nico</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="./scoreboard.js"></script>
+    <script src="./finn-brudebuketten.js"></script>
+  </body>
+</html>
