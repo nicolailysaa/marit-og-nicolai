@@ -6,6 +6,8 @@
     { key: "nicolai", name: "Forsovet", unit: "poeng" },
     { key: "bukett", name: "Kast buketten!", unit: "m" },
     { key: "racer", name: "Fri fart!", unit: "poeng" },
+    { key: "kakestabelen", name: "Kakestabelen", unit: "lag" },
+    { key: "finn-brudebuketten", name: "Finn brudebuketten", unit: "poeng" },
   ];
   var POINTS = [25, 20, 17, 15, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
   var NAME_KEY = "bryllup_spillernavn";

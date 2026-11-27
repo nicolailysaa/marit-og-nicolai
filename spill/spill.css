@@ -231,3 +231,37 @@ canvas {
     grid-column: 1 / -1;
   }
 }
+
+/* ---- Finn brudebuketten: memory ---- */
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  font-size: 2rem;
+  line-height: 1;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  touch-action: manipulation;
+}
+
+.memory-card.open,
+.memory-card.matched {
+  background: #fff;
+  color: inherit;
+}
+
+.memory-card.matched {
+  opacity: 0.55;
+  cursor: default;
+}

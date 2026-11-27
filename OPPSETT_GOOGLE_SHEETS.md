@@ -57,7 +57,7 @@ function doPost(e) {
     .setMimeType(ContentService.MimeType.JSON);
 }
 
-var SPILL = ["nicolai", "bukett", "racer"];
+var SPILL = ["nicolai", "bukett", "racer", "kakestabelen", "finn-brudebuketten"];
 
 function saveScore(sheet, data) {
   var spill = String(data.spill);
@@ -76,7 +76,7 @@ function saveScore(sheet, data) {
 
 // Returnerer beste score per navn for hvert spill: { nicolai: [{navn, score}], ... }
 function doGet(e) {
-  var result = { nicolai: [], bukett: [], racer: [] };
+  var result = { nicolai: [], bukett: [], racer: [], kakestabelen: [], "finn-brudebuketten": [] };
   var poeng = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Poeng");
   if (poeng && poeng.getLastRow() > 1) {
     var rows = poeng.getRange(2, 2, poeng.getLastRow() - 1, 3).getValues();
